@@ -3,232 +3,494 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>PromoRTRGarage | Advertising & Marketing Agency</title>
+
+  <meta name="description" content="PromoRTRGarage is an advertising and marketing agency providing promotional services for YouTube, Twitch, Kick, gaming, music, creators and brands.">
 
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #0b0b0f;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #09090d;
       color: #ffffff;
       line-height: 1.6;
     }
 
     header {
-      padding: 70px 20px;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      background: linear-gradient(135deg, #15151d, #24243a);
+      padding: 60px 20px;
+      background:
+        radial-gradient(circle at top, #30304d 0%, #151522 35%, #09090d 75%);
     }
 
-    header h1 {
-      font-size: 42px;
+    .hero {
+      max-width: 850px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #3f3f55;
+      border-radius: 30px;
+      color: #cfcfe8;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
       margin-bottom: 15px;
+      letter-spacing: -1px;
     }
 
-    header p {
-      color: #cfcfe5;
-      font-size: 18px;
+    .hero h1 span {
+      color: #b9b9ff;
+    }
+
+    .hero h2 {
+      font-size: 24px;
+      margin-bottom: 18px;
+      color: #dddded;
+      font-weight: normal;
+    }
+
+    .hero p {
+      color: #aaaabd;
       max-width: 700px;
       margin: auto;
+      font-size: 17px;
+    }
+
+    .buttons {
+      margin-top: 30px;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 25px;
-      padding: 13px 25px;
+      padding: 13px 24px;
+      margin: 6px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .primary {
       background: #ffffff;
       color: #111111;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
+    }
+
+    .secondary {
+      border: 1px solid #444458;
+      color: #ffffff;
+      background: #15151f;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
     }
 
     section {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
-      padding: 55px 20px;
+      padding: 75px 20px;
     }
 
-    h2 {
+    .section-title {
       text-align: center;
-      margin-bottom: 30px;
-      font-size: 30px;
+      margin-bottom: 40px;
     }
 
-    .about {
-      text-align: center;
-      color: #d5d5df;
-      max-width: 750px;
+    .section-title h2 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #9f9faf;
+    }
+
+    .about-box {
+      max-width: 800px;
       margin: auto;
+      text-align: center;
+      color: #c7c7d5;
+      font-size: 17px;
     }
 
-    .services {
+    .owner {
+      margin-top: 20px;
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
     }
 
     .card {
-      background: #16161f;
-      padding: 25px;
-      border-radius: 12px;
-      text-align: center;
+      background: #14141c;
       border: 1px solid #292936;
+      border-radius: 14px;
+      padding: 30px 22px;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #55556c;
+    }
+
+    .icon {
+      font-size: 34px;
+      margin-bottom: 15px;
     }
 
     .card h3 {
       margin-bottom: 10px;
+      font-size: 20px;
     }
 
     .card p {
-      color: #bdbdcc;
+      color: #a9a9b8;
       font-size: 14px;
     }
 
-    .contact {
+    .partner-card {
+      padding: 30px 20px;
+    }
+
+    .partner-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .partner-card p {
+      margin-bottom: 18px;
+    }
+
+    .partner-btn {
+      display: inline-block;
+      padding: 9px 18px;
+      border-radius: 7px;
+      border: 1px solid #444458;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .contact-box {
       text-align: center;
-      background: #15151d;
-      border-radius: 15px;
-      padding: 45px 20px;
+      background: linear-gradient(135deg, #181824, #101017);
+      border: 1px solid #292936;
+      border-radius: 18px;
+      padding: 55px 20px;
+    }
+
+    .contact-box h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: #aaaabd;
+      max-width: 650px;
+      margin: auto;
     }
 
     footer {
       text-align: center;
-      padding: 25px;
-      color: #9999a8;
+      padding: 30px 20px;
+      border-top: 1px solid #20202a;
+      color: #777787;
       font-size: 14px;
     }
 
-    .owner {
-      margin-top: 10px;
+    .footer-name {
       color: #ffffff;
       font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .hero h2 {
+        font-size: 20px;
+      }
+
+      section {
+        padding: 55px 18px;
+      }
+
+      .section-title h2,
+      .contact-box h2 {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- HERO -->
+
   <header>
-    <h1>PromoRTRGarage</h1>
-    <p>Advertising & Marketing Agency</p>
+    <div class="hero">
 
-    <p>
-      Professional promotion for creators, gaming channels,
-      streamers, musicians, brands and more.
-    </p>
+      <div class="badge">
+        Advertising • Marketing • Promotion
+      </div>
 
-    <a class="btn" href="https://x.com/PromoRTRG" target="_blank">
-      Contact @PromoRTRG
-    </a>
+      <h1>
+        Promo<span>RTRGarage</span>
+      </h1>
+
+      <h2>
+        Advertising & Marketing Agency
+      </h2>
+
+      <p>
+        Professional promotional services for creators, gaming channels,
+        streamers, musicians, brands and more.
+      </p>
+
+      <div class="buttons">
+        <a
+          class="btn primary"
+          href="https://x.com/PromoRTRG"
+          target="_blank">
+          Contact @PromoRTRG
+        </a>
+
+        <a
+          class="btn secondary"
+          href="#services">
+          Explore Services
+        </a>
+      </div>
+
+    </div>
   </header>
 
+
+  <!-- ABOUT -->
+
   <section>
-    <h2>About Us</h2>
 
-    <p class="about">
-      PromoRTRGarage is an advertising and marketing agency focused on
-      helping creators and brands improve visibility and reach new audiences
-      through promotional campaigns.
-    </p>
+    <div class="section-title">
+      <h2>About Us</h2>
+      <p>Helping creators and brands get discovered.</p>
+    </div>
 
-    <p class="about owner">
-      Owner: @PromoRTRG
-    </p>
+    <div class="about-box">
+
+      <p>
+        PromoRTRGarage is an advertising and marketing agency focused on
+        promotional campaigns for creators, gaming channels, streamers,
+        musicians, brands and digital projects.
+      </p>
+
+      <p class="owner">
+        Owner: @PromoRTRG
+      </p>
+
+    </div>
+
   </section>
 
-  <section>
-    <h2>Our Services</h2>
-<section>
-  <h2>Our Partners</h2>
 
-  <div class="services">
+  <!-- SERVICES -->
 
-    <div class="card">
-      <h3>@streamerszone</h3>
-      <p>Partner Promotion & Creator Support</p>
-      <a class="btn" href="https://x.com/streamerszone" target="_blank">
-        View Partner
-      </a>
+  <section id="services">
+
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>Promotion solutions for different types of creators and projects.</p>
     </div>
 
-    <div class="card">
-      <h3>@ProStreamerRTR</h3>
-      <p>Partner Promotion & Creator Support</p>
-      <a class="btn" href="https://x.com/ProStreamerRTR" target="_blank">
-        View Partner
-      </a>
-    </div>
-
-    <div class="card">
-      <h3>@PromoBoost098</h3>
-      <p>Partner Promotion & Creator Support</p>
-      <a class="btn" href="https://x.com/PromoBoost098" target="_blank">
-        View Partner
-      </a>
-    </div>
-
-  </div>
-</section>
-    <div class="services">
+    <div class="grid">
 
       <div class="card">
+        <div class="icon">▶️</div>
         <h3>YouTube Promotion</h3>
-        <p>Promotion for YouTube creators and video content.</p>
+        <p>
+          Promotional support for YouTube creators, videos and channels.
+        </p>
       </div>
 
       <div class="card">
+        <div class="icon">🎥</div>
         <h3>Twitch Promotion</h3>
-        <p>Promotional support for Twitch streamers and channels.</p>
+        <p>
+          Promotion for Twitch streamers, channels and live content.
+        </p>
       </div>
 
       <div class="card">
+        <div class="icon">⚡</div>
         <h3>Kick Promotion</h3>
-        <p>Promotion for Kick creators and live-streaming content.</p>
+        <p>
+          Promotional campaigns for Kick creators and livestreamers.
+        </p>
       </div>
 
       <div class="card">
+        <div class="icon">🎮</div>
         <h3>Gaming Promotion</h3>
-        <p>Gaming content and streamer promotion.</p>
+        <p>
+          Promotion for gaming channels, videos and gaming creators.
+        </p>
       </div>
 
       <div class="card">
+        <div class="icon">🎵</div>
         <h3>Music Promotion</h3>
-        <p>Promotion for musicians, artists and music creators.</p>
+        <p>
+          Promotional support for musicians, artists and music creators.
+        </p>
       </div>
 
       <div class="card">
+        <div class="icon">📢</div>
         <h3>Brand Promotion</h3>
-        <p>Advertising and promotional campaigns for brands and projects.</p>
+        <p>
+          Advertising and promotional campaigns for brands and projects.
+        </p>
       </div>
 
     </div>
+
   </section>
 
+
+  <!-- PARTNERS -->
+
   <section>
-    <div class="contact">
+
+    <div class="section-title">
+      <h2>Our Partners</h2>
+      <p>Working together to support creators and digital projects.</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card partner-card">
+        <h3>@streamerszone</h3>
+        <p>
+          Partner Promotion & Creator Support
+        </p>
+
+        <a
+          class="partner-btn"
+          href="https://x.com/streamerszone"
+          target="_blank">
+          View Partner
+        </a>
+      </div>
+
+
+      <div class="card partner-card">
+        <h3>@ProStreamerRTR</h3>
+        <p>
+          Partner Promotion & Creator Support
+        </p>
+
+        <a
+          class="partner-btn"
+          href="https://x.com/ProStreamerRTR"
+          target="_blank">
+          View Partner
+        </a>
+      </div>
+
+
+      <div class="card partner-card">
+        <h3>@PromoBoost098</h3>
+        <p>
+          Partner Promotion & Creator Support
+        </p>
+
+        <a
+          class="partner-btn"
+          href="https://x.com/PromoBoost098"
+          target="_blank">
+          View Partner
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section>
+
+    <div class="contact-box">
+
       <h2>Let's Work Together</h2>
 
       <p>
-        Looking for promotional support?
-        Contact us on X for paid promotions and custom orders.
+        Looking for promotional support for your channel, content,
+        music or brand? Contact us on X for paid promotions and custom orders.
       </p>
 
-      <a class="btn" href="https://x.com/PromoRTRG" target="_blank">
-        DM @PromoRTRG
-      </a>
+      <div class="buttons">
+
+        <a
+          class="btn primary"
+          href="https://x.com/PromoRTRG"
+          target="_blank">
+          DM @PromoRTRG
+        </a>
+
+      </div>
+
     </div>
+
   </section>
 
+
+  <!-- FOOTER -->
+
   <footer>
-    © 2026 PromoRTRGarage Advertising & Marketing Agency.
-    All rights reserved.
+
+    <div class="footer-name">
+      PromoRTRGarage Advertising & Marketing Agency
+    </div>
+
+    <div>
+      Owner: @PromoRTRG
+    </div>
+
+    <div>
+      © 2026 PromoRTRGarage. All rights reserved.
+    </div>
+
   </footer>
 
 </body>
-  </html>
+          </html>
